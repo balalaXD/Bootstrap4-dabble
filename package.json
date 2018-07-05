@@ -5,8 +5,8 @@
   "main": "index.html",
   "scripts": {
     "start": "npm run lite",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lite": "lite-server"
+    "lite": "lite-server",
+    "sass": "node-sass -o css/ css/"
   },
   "keywords": [],
   "author": "Noooye <liferec@163.com>",
@@ -19,6 +19,7 @@
     "popper.js": "^1.12.9"
   },
   "devDependencies": {
-    "lite-server": "^2.4.0"
+    "lite-server": "^2.4.0",
+    "node-sass": "^4.7.2"
   }
 }

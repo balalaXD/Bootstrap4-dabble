@@ -211,6 +211,14 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
+                    <div class="btn-group" id="carouselButton">
+                        <button type="button" class="btn btn-sm btn-danger" id="carousel-pause">
+                            <span class="fa fa-pause"></span>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-danger" id="carousel-play">
+                            <span class="fa fa-play"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -331,6 +339,19 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+    $(function() {
+        $('.carousel').carousel({
+            interval: 2000
+        });
+        $('#carousel-pause').on('click', function() {
+            $('.carousel').carousel('pause');
+        });
+        $("#carousel-play").on('click', function() {
+            $('.carousel').carousel('cycle');
+        });
+    });
+    </script>
 </body>
 
 </html>

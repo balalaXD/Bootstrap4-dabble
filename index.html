@@ -30,7 +30,7 @@
                     <li class="nav-item"><a href="./contactus.html" class="nav-link"><span class="fa fa-address-card fa-lg"></span> contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a style="cursor: pointer;"><span class="fa fa-sign-in"></span> Login</a>
+                    <a id="loginToggle" style="cursor: pointer;"><span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
         </div>
@@ -161,7 +161,7 @@
                             <img src="img/logo.png" class="img-fluid">
                         </div>
                         <div class="col col-sm-5 align-self-center">
-                            <a role="button" class="btn btn-block btn-warning btn-sm nav-link">Reserve Table</a>
+                            <a role="button" class="btn btn-block btn-warning btn-sm nav-link" id="reserveToggle">Reserve Table</a>
                         </div>
                     </div>
                 </div>
@@ -335,41 +335,7 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-    function modalHandler() {
-        $btnLogin = $('#Navbar > span > a');
-        $btnReserve = $('.jumbotron .btn-warning');
-
-        $btnLogin.on('click', function() {
-            $("#loginModal").modal({
-                show: true
-            });
-        });
-
-        $btnReserve.on('click', function() {
-            $("#reserveModal").modal({
-                show: true
-            });
-        });
-    };
-
-    $(function() {
-        $('.carousel').carousel({
-            interval: 2000
-        });
-        $('#carouselAnimate').on('click', function() {
-            animating = $('#carouselAnimate').children('span').hasClass("fa-pause");
-            if (animating) {
-                $('.carousel').carousel('pause');
-                $('#carouselAnimate').children('span').removeClass("fa-pause").addClass("fa-play");
-            } else {
-                $('.carousel').carousel('cycle');
-                $('#carouselAnimate').children('span').removeClass("fa-play").addClass("fa-pause");
-            }
-        });
-        modalHandler();
-    });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

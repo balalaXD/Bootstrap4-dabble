@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "start": "npm run lite",
+    "start": "npm run watch:all",
     "lite": "lite-server",
-    "sass": "node-sass -o css/ css/"
+    "scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\""
   },
   "keywords": [],
   "author": "Noooye <liferec@163.com>",
@@ -20,6 +22,8 @@
   },
   "devDependencies": {
     "lite-server": "^2.4.0",
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.7.2",
+    "onchange": "^3.3.0",
+    "parallelshell": "^3.0.2"
   }
 }
